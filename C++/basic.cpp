@@ -11,6 +11,6 @@ int main()
     is for comment */
     cout << "Enter a number -> "; // print
     int a;                        // declare a variable
-    cin >> a;                     // input >> jisko lena hai
+    cin >> a;                     // input 
     cout << "You Entered " << a << endl;
 }

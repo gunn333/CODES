@@ -14,10 +14,10 @@ int main()
     double g;
 
     cout << "Enter an integer: ";
-    // Input
+    /// Input
     cin >> a >> b >> c >> d >> e >> f >> g;
 
-    // Output
+    /// Output
     cout << "You entered: " << a << endl;
     cout << "You entered: " << b << endl;
     cout << "You entered: " << c << endl;

@@ -1,11 +1,12 @@
 #include<iostream>
 using namespace std;
 
-void HappyBirthday(){    //void function_name() {function body}
-    cout              << "Happy Birthday to you!\n";
+void HappyBirthday( string name , int age ){    //void function_name() {function body}
+    cout << "Happy Birthday to " << name << "\n"; // can change name to any string like bdayboy it will work the same as name
     cout << "Happy Birthday to you!\n";
     cout << "Happy Birthday dear user!\n";
     cout << "Happy Birthday to you!\n";
+    cout << "You are " << age << " years old!\n";
 }
 int main(){
     /*
@@ -30,8 +31,14 @@ int main(){
     local scope = the part of a program in which a local variable may be accessed
     global scope = the part of a program in which a global variable may be accessed
     */
-    HappyBirthday(); //function call
+    string name = "Bro";
+    int age = 18;
+    HappyBirthday(name, age); //function call
     // can call the function as many times as you want
     
+    /*
+    Need to define void happybirthday();
+    if we are using after main dunction
+    */
     return 0;
 }

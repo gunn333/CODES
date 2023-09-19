@@ -178,4 +178,93 @@ int main(){
     return 0;
 } */
 
-//!
+//! A number is prime or not
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+    /// Number input
+    int num;
+    cout << "Enter the number -> ";
+    cin >> num;
+    bool flag = 0; // yeah pata karne ke liye ke hum for loop break kr ke aa rhe hain ya complete krke aa rhe hain
+
+    for (int i = 2; i < num; i++)
+    {
+        if (num % i == 0)
+        {
+            cout << "The number is not prime" << endl;
+            flag = 1;
+            break;
+        }
+    }
+
+    /// Flag ==0 ka matlab main for loop complete krke aa rha hun
+
+    if (flag == 0)
+    {
+        cout << "The number is prime" << endl;
+    }
+    return 0;
+}
+*/
+
+//! Reverse a number
+/*
+#include<iostream>
+using namespace std;
+int main(){
+    /// Number input
+    int num;
+    cin>>num;
+    int reverse=0;  ///Ismein Reverse number store hoga
+    while(num>0){
+        int lastdigit = num%10;
+        reverse = reverse*10 + lastdigit;
+        num = num/10; ///Isse last digit hat jayega
+    }
+    cout<<"Reverse of Num: " <<reverse<<endl;
+}
+*/
+
+//! If a number is Armstrong number or not
+/*
+153
+1*1*1 = 1
+5*5*5 = 125
+3*3*3 = 27
+1+125+27 = 153
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int num; /// Number input
+    cin >> num;
+    /*
+    Jaise hum reverse mein last digit nikal rahe the vaise hi hum yahan pe bhi last digit nikalenge
+    aur fir unka cube find krna and then add krna hai sum mein
+    then hume check krna hai ke sum == num hai ya nahi aur num humne while loop mein divide kr kr ke 0 kr diya hai
+    create another variable original number and store num in it
+
+    int sum = 0;
+    int originalnum = num;
+    while (num > 0)
+    {
+        int lastdigit = num % 10;
+        sum += lastdigit * lastdigit * lastdigit;
+        num = num / 10; /// Isse last digit hat jayega
+    }
+    if (sum == originalnum)
+    {
+        cout << "Armstrong number" << endl;
+    }
+    else
+    {
+        cout << "Not an Armstrong number" << endl;
+    }
+    return 0;
+}
+*/
+

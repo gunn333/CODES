@@ -208,6 +208,26 @@ int main()
     }
     return 0;
 }
+
+ALternate:
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    for (int i = 2; i <= sqrt(n); ++i)
+    {
+        if (n % i == 0)
+        {
+            cout << n << " is not a prime number";
+            return 0;
+        }
+    }
+    cout << n << " is a prime number";
+    return 0;
+}
 */
 
 //! Reverse a number
@@ -268,3 +288,27 @@ int main()
 }
 */
 
+//! Palindrome Number
+/*
+#include<iostream>
+using namespace std;
+int main(){
+    int num;
+    cin >> num;
+    int rev =0;
+    int orig = num;
+    while(num>0){
+        int lastdigit = num % 10;
+        rev = rev*10 +lastdigit;
+        num = num / 10;
+    }
+    if(orig == rev){
+        cout <<"Palindrome";
+        return 0;
+    }
+    else{
+        cout <<"Not palindrome";
+    }
+    return 0;
+}
+*/

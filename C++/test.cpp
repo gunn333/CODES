@@ -397,5 +397,94 @@ int main()
 }
 */
 
-//! Pair Sum Problem
+//! Swap Alternate Elements of Array
+/*
+#include<iostream>
+#include<utility>
+using namespace std;
 
+void swapAlternate(int arr[], int size){
+    for(int i=0;i<size;i+=2){
+        if(i+1<size){
+            swap(arr[i],arr[i+1]);
+        }
+    }
+}
+int main(){
+    int even[8] = {1,2,3,4,5,6,7,8};
+    int odd[5] = {1,2,3,4,5};
+
+    swapAlternate(even,8);
+    //Print even array
+    for(int i=0;i<8;i++){
+        cout<<even[i]<<" ";
+    }
+    cout<<endl;
+    swapAlternate(odd,5);
+    //Print odd array
+    for(int i=0;i<5;i++){
+        cout<<odd[i]<<" ";
+    }
+    return 0;
+}
+*/
+
+//! Maximum Chocolates
+/*
+// apke paas 15 rupees hai aur ek chocolate ki price 1 rupee hai
+// 3 chocolate wrappers se ek chocolate free mein milegi
+// kitni chocolate kha paoge
+// 15 chocolates = 15 wrappers = 15/3 = 5 chocolates
+// 5 chocolates = 5 wrappers = 5/3 = 1 chocolate,2 wrappers
+// 1 chocolate = 1 wrapper , 2 wrappers = 3/3 = 1 chocolate
+#include <iostream>
+using namespace std;
+int main(){
+    int money; //15
+    cin>>money;
+    int price; //1
+    cin>>price;
+    int chocolate = money/price; //15
+    int wrapper = chocolate; //15
+    while(wrapper>=3){
+        int newchocolate = wrapper/3;
+        chocolate += newchocolate;
+        wrapper = wrapper%3 + newchocolate;  //15%3 = 0 + 5 = 5
+    }
+    cout<<chocolate<<endl;
+
+    return 0;
+}
+*/
+
+//! Frequency of an element in an array
+/*
+#include <iostream>
+using namespace std;
+int main(){
+    return 0;
+}
+*/
+
+//! Find Unique element in array
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+    return 0;
+}
+*/
+//! Find Duplicate element in array
+//! Array Intersection
+//! Pair Sum Problem
+//! Triplet Sum Problem
+//! Sort 0's and 1's in an array
+//! Sort 0's, 1's and 2's in an array
+//! Rotate an array
+//! 2D Arrays
+//! Wave Print
+//! Spiral Print
+//! Matrix Multiplication
+//! Search in a 2D array
+//! Staircase Search

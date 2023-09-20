@@ -312,7 +312,7 @@ int main(){
     return 0;
 }
 */
-
+/*
 #include <iostream>
 #include <algorithm>
 
@@ -354,3 +354,48 @@ int main() {
 
     return 0;
 }
+*/
+
+//! Power of 2 Leeetcode problem
+/*
+Question was if the given number is a power of 2 or not
+num  = 4
+num - 1 = 3
+binary of 4 = 100
+binary of 3 = 011
+100 & 011 = 0
+only 1 & 1 = 1 rest all 0
+if num is power of 2 then num & num-1 = 0
+
+#include <iostream>
+using namespace std;
+
+bool isPowerOfTwo(int x) // x is the number n
+{
+    if (x > 0) // Zero and negative numbers are not allowed
+    {
+        if ((x & (x - 1)) == 0) // using & operator
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+    else
+        return false;
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    if (isPowerOfTwo(n))
+        cout << "true" << endl;
+    else
+        cout << n << "false" << endl;
+    return 0;
+}
+*/
+
+//! Pair Sum Problem
+

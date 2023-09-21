@@ -444,18 +444,17 @@ int main(){
     cin>>money;
     int price; //1
     cin>>price;
-    int chocolate = money/price; //15
-    int wrapper = chocolate; //15
+    int total_chocolate = money/price; //15
+    int wrapper = total_chocolate; //15
     while(wrapper>=3){
         int newchocolate = wrapper/3;
-        chocolate += newchocolate;
-        wrapper = wrapper%3 + newchocolate;  //15%3 = 0 + 5 = 5
-    }
-    cout<<chocolate<<endl;
-
+        total_chocolate += newchocolate;
+        wrapper = wrapper%3 + newchocolate;  //15%3 = 0 + 5 = 5 // wrapper ab 5 hai and so on
+    cout<<total_chocolate<<endl;
     return 0;
 }
-*/
+}
+/*
 
 //! Frequency of an element in an array
 /*

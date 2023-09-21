@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int factorial(int n)
+int factorial(int n) // if there are 2 arguments  like n and fact then during nCr as well we have to pass fact as well
 {
     int fact = 1;
     for (int i = 1; i <= n; i++)

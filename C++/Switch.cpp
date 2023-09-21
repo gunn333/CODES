@@ -1,26 +1,28 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
+int main()
+{
     int a;
-    cout<<"Enter a number: ";
-    cin>>a;
+    cout << "Enter a number: ";
+    cin >> a;
     int b;
-    cout<<"Enter another number: ";
-    cin>>b;
-    switch(a+b){
-        case 1:
-            cout<<"Sum is 1"<<endl;
-            break;
-        case 2: 
-            cout<<"Sum is 2"<<endl;
-            break;
-        case 3:
-            cout<<"Sum is 3"<<endl;
-            break;
-    return 0;
+    cout << "Enter another number: ";
+    cin >> b;
+    switch (a + b)
+    {
+    case 1:
+        cout << "Sum is 1" << endl;
+        break;
+    case 2:
+        cout << "Sum is 2" << endl;
+        break;
+    case 3:
+        cout << "Sum is 3" << endl;
+        break;
+        return 0;
+    }
 }
-}
-//!Switch Statement
+//! Switch Statement
 /*
 case can be integer, character, constant expression or enumeration constant
 case can not be variable , string or floating point number

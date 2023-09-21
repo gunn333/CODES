@@ -465,15 +465,6 @@ int main(){
 }
 */
 
-//! Find Unique element in array
-/*
-#include <iostream>
-using namespace std;
-int main()
-{
-    return 0;
-}
-*/
 //! Find Duplicate element in array
 //! Array Intersection
 //! Pair Sum Problem

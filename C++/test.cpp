@@ -488,6 +488,25 @@ int main(){
 }
 */
 
+//! Sum of first n natural numbers
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    int sum = 0;
+    int i = 1;     // i is 1 because we have to start from 1 and not 0
+    while (i <= n) // 5 = 1 + 2 + 3 + 4 + 5 = 15
+    {
+        sum += i;
+        i++;
+    }
+    cout << sum << endl;
+    return 0;
+}
+*/
 //! Find Duplicate element in array
 //! Array Intersection
 //! Pair Sum Problem

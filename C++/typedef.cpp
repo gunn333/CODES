@@ -41,6 +41,8 @@ unlike arrays, vectors can grow dynamically during program execution
 std::vector<int> numbers; // vector of integers inside main function
 for (const int & num : numbers){ // range-based for loop
 std::cout << num << std::endl;
+
+Vector is dynamic array jismein size nahi dena padta vo khud badhta hai jaise ki agar humne 5 elements dale toh vo 5 elements ke baad 6th element add kar sakte hai vector<int> v(5); // vector of integers with size 5
 }
 ///! Add Elements to a Vector
 numbers.push_back(5); // add 5 to the end of the vector

@@ -6,4 +6,3 @@
 ->  works on global level.
 ->  Ek jageh ke computers dusri jageh ke computers ke sath connected hain
 ->  **SERVER** is a device 
-->

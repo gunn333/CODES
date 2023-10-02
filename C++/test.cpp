@@ -520,3 +520,107 @@ int main()
 //! Matrix Multiplication
 //! Search in a 2D array
 //! Staircase Search
+/*
+#include <iostream>
+
+using namespace std;
+
+void generateMatrix(int A) {
+    int matrix[A][A];
+    int num = 1;
+    int left = 0, right = A - 1, top = 0, bottom = A - 1;
+
+    while (num <= A * A) {
+        // Traverse from left to right
+        for (int i = left; i <= right; i++) {
+            matrix[top][i] = num++;
+        }
+        top++;
+
+        // Traverse from top to bottom
+        for (int i = top; i <= bottom; i++) {
+            matrix[i][right] = num++;
+        }
+        right--;
+
+        // Traverse from right to left
+        for (int i = right; i >= left; i--) {
+            matrix[bottom][i] = num++;
+        }
+        bottom--;
+
+        // Traverse from bottom to top
+        for (int i = bottom; i >= top; i--) {
+            matrix[i][left] = num++;
+        }
+        left++;
+    }
+
+    // Print the generated matrix
+    for (int i = 0; i < A; i++) {
+        for (int j = 0; j < A; j++) {
+            cout << matrix[i][j] << "\t";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    int A;
+    cout << "Enter the value of A: ";
+    cin >> A;
+
+    generateMatrix(A);
+
+    return 0;
+}
+*/
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int N, M;
+    cin >> N >> M;
+
+    long long cumulativeDurations[N + 1] = {0}; // Cumulative durations, initialized with 0
+    int songFrequency[N];
+
+    // Input the playlist description
+    for (int i = 0; i < N; i++) {
+        int K, T;
+        cin >> K >> T;
+        cumulativeDurations[i + 1] = cumulativeDurations[i] + static_cast<long long>(K) * T;
+        songFrequency[i] = K;
+    }
+
+    // Input the moments
+    long long moments[M];
+    for (int i = 0; i < M; i++) {
+        cin >> moments[i];
+    }
+
+    // Find the song number for each moment
+    for (int i = 0; i < M; i++) {
+        long long moment = moments[i];
+
+        int left = 0, right = N;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (cumulativeDurations[mid] < moment) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+
+        int songNumber = left;
+        long long prevDuration = cumulativeDurations[songNumber - 1];
+        long long songDuration = songFrequency[songNumber - 1] * (moment - prevDuration);
+
+        cout << songNumber << "\n";
+    }
+
+    return 0;
+
+}

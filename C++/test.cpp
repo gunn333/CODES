@@ -575,52 +575,656 @@ int main() {
     return 0;
 }
 */
-#include <iostream>
+// #include <iostream>
 
-using namespace std;
+// using namespace std;
+
+// int main() {
+//     int N, M;
+//     cin >> N >> M;
+
+//     long long cumulativeDurations[N + 1] = {0}; // Cumulative durations, initialized with 0
+//     int songFrequency[N];
+
+//     // Input the playlist description
+//     for (int i = 0; i < N; i++) {
+//         int K, T;
+//         cin >> K >> T;
+//         cumulativeDurations[i + 1] = cumulativeDurations[i] + static_cast<long long>(K) * T;
+//         songFrequency[i] = K;
+//     }
+
+//     // Input the moments
+//     long long moments[M];
+//     for (int i = 0; i < M; i++) {
+//         cin >> moments[i];
+//     }
+
+//     // Find the song number for each moment
+//     for (int i = 0; i < M; i++) {
+//         long long moment = moments[i];
+
+//         int left = 0, right = N;
+//         while (left < right) {
+//             int mid = left + (right - left) / 2;
+//             if (cumulativeDurations[mid] < moment) {
+//                 left = mid + 1;
+//             } else {
+//                 right = mid;
+//             }
+//         }
+
+//         int songNumber = left;
+//         long long prevDuration = cumulativeDurations[songNumber - 1];
+//         long long songDuration = songFrequency[songNumber - 1] * (moment - prevDuration);
+
+//         cout << songNumber << "\n";
+//     }
+
+//     return 0;
+
+// }
+/*
+#include <iostream>
 
 int main() {
     int N, M;
-    cin >> N >> M;
+    std::cin >> N >> M;
 
-    long long cumulativeDurations[N + 1] = {0}; // Cumulative durations, initialized with 0
-    int songFrequency[N];
-
-    // Input the playlist description
+    int playlist[N];
+    int moments[M];
+    long long songDuration[N];
+    // Input the play list
     for (int i = 0; i < N; i++) {
-        int K, T;
-        cin >> K >> T;
-        cumulativeDurations[i + 1] = cumulativeDurations[i] + static_cast<long long>(K) * T;
-        songFrequency[i] = K;
+        std::cin >> playlist[i];
+        std::cin >> songDuration[i];
+    }
+
+    // Calculate the prefix sum of song durations
+    long long prefixSum[N];
+    prefixSum[0] = static_cast<long long>(playlist[0]) * songDuration[0];
+    for (int i = 1; i < N; i++) {
+        prefixSum[i] = prefixSum[i - 1] + static_cast<long long>(playlist[i]) * songDuration[i];
     }
 
     // Input the moments
-    long long moments[M];
     for (int i = 0; i < M; i++) {
-        cin >> moments[i];
+        std::cin >> moments[i];
     }
 
-    // Find the song number for each moment
+    // Find the song playing at each moment
     for (int i = 0; i < M; i++) {
         long long moment = moments[i];
+        int songNumber = -1;
 
-        int left = 0, right = N;
-        while (left < right) {
-            int mid = left + (right - left) / 2;
-            if (cumulativeDurations[mid] < moment) {
-                left = mid + 1;
+        // Binary search to find the song
+        int left = 0, right = N - 1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (moment <= prefixSum[mid]) {
+                songNumber = mid;
+                right = mid - 1;
             } else {
-                right = mid;
+                left = mid + 1;
             }
         }
 
-        int songNumber = left;
-        long long prevDuration = cumulativeDurations[songNumber - 1];
-        long long songDuration = songFrequency[songNumber - 1] * (moment - prevDuration);
+        // Adjust for the moment within the current song
+        if (songNumber > 0) {
+            moment -= prefixSum[songNumber - 1];
+        }
 
-        cout << songNumber << "\n";
+        // Calculate the song at the moment and print on a new line
+        songNumber += 1;
+        std::cout << songNumber << std::endl;
     }
 
     return 0;
+}*/
+/*
+#include <iostream>
 
+int main() {
+    int N, X, Y;
+    std::cin >> N >> X >> Y;
+
+    int arr[N];
+    int matrix[X][Y];
+
+    // Input the 1D array
+    for (int i = 0; i < N; i++) {
+        std::cin >> arr[i];
+    }
+
+    if (N != X * Y) {
+        std::cout << "Invalid input: The dimensions do not match the array size." << std::endl;
+        return 1;
+    }
+
+    int index = 0;
+
+    // Fill the 2D matrix
+    for (int i = 0; i < X; i++) {
+        for (int j = 0; j < Y; j++) {
+            matrix[i][j] = arr[index];
+            index++;
+        }
+    }
+
+    // Output the 2D matrix
+    for (int i = 0; i < X; i++) {
+        for (int j = 0; j < Y; j++) {
+            std::cout << matrix[i][j];
+            if (j < Y - 1) {
+                std::cout << " ";
+            }
+        }
+        std::cout << std::endl;
+    }
+
+    return 0;
 }
+*/
+/*
+#include <iostream>
+
+int main() {
+    int m, n;
+    std::cin >> m >> n;
+
+    int mat[m][n];
+
+    // Input the boolean matrix
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            std::cin >> mat[i][j];
+        }
+    }
+
+    // Create arrays to keep track of rows and columns to be set to 1
+    bool rowToSet[m] = {false};
+    bool colToSet[n] = {false};
+
+    // Determine which rows and columns need to be set to 1
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (mat[i][j] == 1) {
+                rowToSet[i] = true;
+                colToSet[j] = true;
+            }
+        }
+    }
+
+    // Modify the matrix
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (rowToSet[i] || colToSet[j]) {
+                mat[i][j] = 1;
+            }
+        }
+    }
+
+    // Output the modified matrix
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            std::cout << mat[i][j];
+            if (j < n - 1) {
+                std::cout << " ";
+            }
+        }
+        std::cout << std::endl;
+    }
+
+    return 0;
+}
+*/
+/*
+#include <iostream>
+
+int main() {
+    int N, X, Y;
+    std::cin >> N >> X >> Y;
+
+    int arr[N];
+    int matrix[X][Y];
+
+    // Input the 1D array
+    for (int i = 0; i < N; i++) {
+        std::cin >> arr[i];
+    }
+
+    if (N != X * Y) {
+        std::cout << "Invalid input: The dimensions do not match the array size." << std::endl;
+        return 1;
+    }
+
+    int index = 0;
+
+    // Fill the 2D matrix
+    for (int i = 0; i < X; i++) {
+        for (int j = 0; j < Y; j++) {
+            matrix[i][j] = arr[index];
+            index++;
+        }
+    }
+
+    // Output the 2D matrix
+    for (int i = 0; i < X; i++) {
+        for (int j = 0; j < Y; j++) {
+            std::cout << matrix[i][j];
+            if (j < Y - 1) {
+                std::cout << " ";
+            }
+        }
+        std::cout << std::endl;
+    }
+
+    return 0;
+}*/
+/*
+#include<iostream>
+using namespace std;
+int main () {
+ int n;
+ cin>>n;
+ int arr[n];
+ for(int i=0;i<n;i++){
+ cin>>arr[i];
+ }
+ int count1 = 0, count0=0;
+ for(int i=0;i<n;i++){
+ if(arr[i] == 1) count1++;
+ if(arr[i] == 0) count0++;
+ }
+ int ans;
+ if(count0 < count1) ans = count0*2;
+ else ans = count1*2;
+ cout<<ans;
+ return 0;
+}
+*/
+/*
+#include <iostream>
+using namespace std;
+int main() {
+ int n;
+ cin >> n;
+ int matrix[n][n];
+ int num = 1;
+ int left = 0, right = n - 1, top = 0, bottom = n - 1;
+ while (left <= right && top <= bottom) {
+ for (int i = left; i <= right; i++) {
+ matrix[top][i] = num++;
+ }
+ top++;
+ for (int i = top; i <= bottom; i++) {
+ matrix[i][right] = num++;
+ }
+ right--;
+ for (int i = right; i >= left; i--) {
+ matrix[bottom][i] = num++;
+ }
+ bottom--;
+ for (int i = bottom; i >= top; i--) {
+ matrix[i][left] = num++;
+ }
+ left++;
+ }
+ for (int i = 0; i < n; i++) {
+ for (int j = 0; j < n; j++) {
+ cout << matrix[i][j] << " ";
+ }
+ cout << endl;
+ }
+ return 0;
+}
+*/
+
+// include<iostream>
+// using namespace std;
+// void Rotate(int *arr,int len){
+//  int lastElm = arr[len-1];
+//  for(int i=len-2;i>=0;i--){
+//  arr[i+1] = arr[i];
+//  }
+//  arr[0] = lastElm;
+// }
+// int main(){
+//  int n,r;
+//  cin>>n>>r;
+//  int arr[n];
+//  for(int i=0;i<n;i++){
+//  cin>>arr[i];
+//  }
+//  for(int i=0;i<r;i++){
+//  Rotate(arr,n);
+//  }
+//  for(int i=0;i<n;i++){
+//  cout<<arr[i]<<" ";
+//  }
+// }
+/*
+#include<iostream>
+#include<vector>
+using namespace std;
+
+void Rotate(vector<int> &arr, int len) {
+    int lastElm = arr[len - 1];
+    for (int i = len - 2; i >= 0; i--) {
+        arr[i + 1] = arr[i];
+    }
+    arr[0] = lastElm;
+}
+
+int main() {
+    int n, r;
+    cin >> n >> r;
+    vector<int> arr(n); // Using a vector instead of an array
+
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    for (int i = 0; i < r; i++) {
+        Rotate(arr, n);
+    }
+
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
+*/
+
+// #include<iostream>
+// using namespace std;
+// int main() {
+//  int size;
+//  cin>>size;
+
+//  int arr[size];
+//  for(int i=0;i<size;i++){
+//  cin>>arr[i];
+//  }
+
+//  int A=0,B=0;
+//  for(int i=0;i<size;i++){
+//  if(i%2==0){
+//  A = A + arr[i];
+//  }else{
+//  B = B + arr[i];
+//  }
+//  }
+//  cout<<A<<" "<<B;
+//  return 0;
+// }
+
+// #include<iostream>
+// using namespace std;
+
+// int main() {
+//     int m, n;
+//     cin >> m >> n;
+//     int arr[m][n];
+
+//     // Taking input for the 2D array
+//     for(int i = 0; i < m; i++) {
+//         for(int j = 0; j < n; j++) {
+//             cin >> arr[i][j];
+//         }
+//     }
+
+//     // Wave print row-wise
+//     for(int i = 0; i < m; i++) {
+//         // For even rows, print left to right
+//         if(i % 2 == 0) {
+//             for(int j = 0; j < n; j++) {
+//                 cout << arr[i][j];
+//                 if(j != n - 1 || (j == n - 1 && i != m - 1)) {
+//                     cout << ", ";
+//                 }
+//             }
+//         }
+//         // For odd rows, print right to left
+//         else {
+//             for(int j = n - 1; j >= 0; j--) {
+//                 cout << arr[i][j];
+//                 if(j != 0 || (j == 0 && i != m - 1)) {
+//                     cout << ", ";
+//                 }
+//             }
+//         }
+//     }
+
+//     cout << ", END" << endl;
+//     return 0;
+// }
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    int arr[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    int target, start = -1, end = -1;
+    cin >> target;
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] == target and start == -1)
+        {
+            start = i;
+        }
+        else if (start != -1 and end == -1 and arr[i] != target)
+        {
+            end = i - 1;
+        }
+    }
+
+    cout << start << " " << end;
+}
+*/
+/*
+#include <iostream>
+#include <algorithm>
+#include <climits>
+#include <string>
+using namespace std;
+#define ll long long
+ll find_idx(ll *a, ll n, ll key)
+{
+    ll s = 0;
+    ll e = n - 1;
+    while (s <= e)
+    {
+        ll mid = (s + e) / 2;
+        if (a[mid] == key)
+            return mid;
+        else if (a[mid] < key)
+        {
+            s = mid + 1;
+        }
+        else
+            e = mid - 1;
+    }
+    return -1;
+}
+void compute(ll *a, ll n, ll m)
+{
+    ll min_diff = INT_MAX;
+    ll rose_1, rose_2;
+    for (ll i = 0; i < n; i++)
+    {
+        ll x = a[i];
+        ll y = m - a[i];
+        int j = find_idx(a, n, y);
+        if ((i != j) && (j >= 0 && j < n) && (abs(x - y) < min_diff))
+        {
+            rose_1 = x;
+            rose_2 = y;
+            min_diff = abs(x - y);
+        }
+    }
+    ll x = rose_1, y = rose_2;
+    rose_1 = min(x, y);
+    rose_2 = max(x, y);
+    cout << "Deepak should buy roses whose prices are " << rose_1 << " and " << rose_2 << "." << endl;
+}
+int main()
+{
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll n;
+        cin >> n;
+        ll a[n];
+        for (int i = 0; i < n; i++)
+        {
+            cin >> a[i];
+        }
+        ll m;
+        cin >> m;
+        string str;
+        getline(cin, str);
+        sort(a, a + n);
+        compute(a, n, m);
+    }
+    return 0;
+}
+*/
+
+// #include <iostream>
+// #include <algorithm>
+// #include <climits>
+// using namespace std;
+
+// int main() {
+//     int n;
+//     cin >> n;
+//     int arr[n];
+
+//     for (int i = 0; i < n; i++) {
+//         cin >> arr[i];
+//     }
+
+//     int k;
+//     cin >> k;
+//     sort(arr, arr + n);
+
+//     for (int i = 0; i < n - 3; i++) {
+//         if (i > 0 && arr[i] == arr[i - 1]) continue;
+
+//         for (int j = i + 1; j < n - 2; j++) {
+//             if (j != i + 1 && arr[j] == arr[j - 1]) continue;
+
+//             int low = j + 1, high = n - 1;
+//             while (low < high) {
+//                 int sum = arr[i] + arr[j] + arr[low] + arr[high];
+
+//                 if (sum == k) {
+//                     cout << arr[i] << " " << arr[j] << " " << arr[low] << " " << arr[high] << endl;
+//                     while (low < high && arr[low] == arr[low + 1]) low++;
+//                     while (low < high && arr[high] == arr[high - 1]) high--;
+//                     low++;
+//                     high--;
+//                 } else if (sum < k) {
+//                     low++;
+//                 } else {
+//                     high--;
+//                 }
+//             }
+//         }
+//     }
+
+//     return 0;
+// }
+/*
+#include <iostream>
+#include <string>
+using namespace std;
+
+int stringToInt(string str) {
+    if (str.L() == 0) {
+        return 0;
+    }
+
+    int lastDigit = str.back() - '0';
+    str.pop_back();
+    int num = stringToInt(str);
+
+    return num * 10 + lastDigit;
+}
+
+int main() {
+    string str;
+    cin >> str;
+
+    int result = stringToInt(str);
+
+    cout << result << endl;
+
+    return 0;
+}
+*/
+#include <iostream>
+using namespace std;
+class rhombus
+{
+    int Side;
+    int Dig_1;
+    int Dig_2;
+
+public:
+    rhombus()
+    {
+        Side = 0;
+        Dig_1 = 0;
+        Dig_2 = 0;
+    }
+    rhombus(int s, int d1, int d2)
+    {
+        Side = s;
+        Dig_1 = d1;
+        Dig_2 = d2;
+    }
+    void display() const
+    {
+
+        cout << "Side:" << Side << endl;
+        cout << "Diganonal number 1 : " << Dig_1 << endl;
+        cout << "Diagonal Number 2 : " << Dig_2 << endl;
+        cout << endl;
+    }
+    void area()
+    {
+        cout << "Area of Rhombus : " << (Dig_1 * Dig_2) / 2 << endl;
+    }
+    void peri()
+    {
+        cout << "Perimeter of Rhombus :" << 4 * Side << endl;
+    }
+};
+int main()
+{
+    rhombus s(4, 7, 9);
+    s.display();
+    s.area();
+    s.peri();
+    return 0;
+}
+/*
+int main() {
+    rhombus defaultRhombus; // Creating a default object using the default constructor
+    defaultRhombus.disp();  // Displaying the default object's values using the disp() function
+    defaultRhombus.ar();    // Calculating and displaying the area of the default object
+    defaultRhombus.per();   // Calculating and displaying the perimeter of the default object
+    return 0;
+}
+*/

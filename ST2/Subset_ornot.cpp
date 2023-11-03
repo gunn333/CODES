@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-bool isSubset(int arr1[], int arr2[], int m, int n)
+bool isSubset(int arr1[], int arr2[], int m, int n)   // arr1[] can be represented as int *arr1
 {
     for (int i = 0; i < n; i++)
     {

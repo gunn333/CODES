@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+
+int staircase(int n){
+    int dp[n+1];
+    dp[0] = 1;
+    dp[1] = 1;
+    dp[2] = 2;
+    // for climbing after 2 
+    for(int i=3; i<=n; i++){
+        dp[i] = dp[i-1] + dp[i-2] + dp[i-3];
+    }
+    return dp[n];
+}
+
+int main(){
+    int n;
+    cout << "Enter the number of stairs: ";
+    cin >> n;
+    cout << "\n Ways to climb the stairs: " << staircase(n) << endl;
+
+
+    return 0;
+}

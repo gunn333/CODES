@@ -1,9 +1,3 @@
----
-Col1: "Content1" #Table
-Col2: "Content2"
----
-
-
 # Heading 1
 
 ## Heading 2
@@ -14,15 +8,44 @@ Col2: "Content2"
 
 ##### Heading 5
 
+###### Heading 6
 
-<!-- 
-<h1>Heading 1</h1>
+---
 
-<h2>Heading 2</h2>
+- Bullet point
 
-<h3>Heading 3</h3>
+- Bullet point
+<!-- * Is also for bullet point -->
 
-<h4>Heading 4</h4>
+---
 
-<h5>Heading 5</h5>
- -->
+<!-- ``` ``` is used for highlighting-->
+
+This code is for `c++` language
+
+```c++
+#include<iostream>
+using namespace std;
+int main(){
+    cout <<"This is for printing">>;
+}
+```
+
+[CODES Github](https://github.com/gunn333/CODES "Follow")
+
+*Italics*
+
+~~Strike Through~~
+
+**Strong/Bold**
+
+Tables
+
+| Table | goes | Here  |
+| ----- | ---- | ----- |
+| one   | two  | three |
+
+>Keep Smiling and work harder
+
+- [ ] Item 1
+- [x] Item 2

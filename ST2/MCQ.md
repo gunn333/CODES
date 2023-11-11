@@ -33,7 +33,7 @@ int main(){
 
 [CODES Github](https://github.com/gunn333/CODES "Follow")
 
-*Italics*
+_Italics_
 
 ~~Strike Through~~
 
@@ -45,7 +45,11 @@ Tables
 | ----- | ---- | ----- |
 | one   | two  | three |
 
->Keep Smiling and work harder
+> Keep Smiling and work harder
+>
+> > Author of random quote
+
+Checklist
 
 - [ ] Item 1
 - [x] Item 2

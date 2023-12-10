@@ -1,0 +1,1 @@
+Create a class Shape with method getArea(), inherit two classes: Square and Circle from Shape and override the getArea() method from Shape in Square and Circle to Calculate the area of Circle and Square by creating an instance of both Square and Circle in cpp

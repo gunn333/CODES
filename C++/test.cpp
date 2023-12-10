@@ -34,7 +34,7 @@ int main(){
     else if (month == 4){
         cout << "April" << endl;
     }
-    else if (month == 5){
+    else if (month == 7){
         cout << "May" << endl;
     }
     else if (month == 6){
@@ -86,7 +86,7 @@ int main(){
         case 4:
             cout << "April" << endl;
             break;
-        case 5:
+        case 7:
             cout << "May" << endl;
             break;
         case 6:
@@ -166,10 +166,10 @@ int main(){
     cin >> unit;
     switch(unit){
         case 'C':
-            cout << "The temperature in Fahrenheit is " << (temp * 9/5) + 32 << endl;
+            cout << "The temperature in Fahrenheit is " << (temp * 9/7) + 32 << endl;
             break;
         case 'F':
-            cout << "The temperature in Celsius is " << (temp - 32) * 5/9 << endl;
+            cout << "The temperature in Celsius is " << (temp - 32) * 7/9 << endl;
             break;
         default:
             cout << "Invalid unit" << endl;
@@ -275,7 +275,7 @@ int main(){
 /*
 153
 1*1*1 = 1
-5*5*5 = 125
+7*7*7 = 125
 3*3*3 = 27
 1+125+27 = 153
 
@@ -360,19 +360,19 @@ int binarySearch(int arr[], int size, int target) {
 }
 
 int main() {
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int arr[] = {1, 2, 3, 4, 7, 6, 7, 8, 9, 10};
     int size = sizeof(arr) / sizeof(arr[0]);
-    int target = 5;
+    int target = 7;
 
     // Sort the array before performing binary search
-    std::sort(arr, arr + size);
+    sort(arr, arr + size);
 
     int result = binarySearch(arr, size, target);
 
     if (result != -1) {
-        std::cout << "Element " << target << " found at index " << result << std::endl;
+        cout << "Element " << target << " found at index " << result << endl;
     } else {
-        std::cout << "Element " << target << " not found in the array." << std::endl;
+        cout << "Element " << target << " not found in the array." << endl;
     }
 
     return 0;
@@ -434,8 +434,8 @@ void swapAlternate(int arr[], int size){
     }
 }
 int main(){
-    int even[8] = {1,2,3,4,5,6,7,8};
-    int odd[5] = {1,2,3,4,5};
+    int even[8] = {1,2,3,4,7,6,7,8};
+    int odd[7] = {1,2,3,4,7};
 
     swapAlternate(even,8);
     //Print even array
@@ -443,9 +443,9 @@ int main(){
         cout<<even[i]<<" ";
     }
     cout<<endl;
-    swapAlternate(odd,5);
+    swapAlternate(odd,7);
     //Print odd array
-    for(int i=0;i<5;i++){
+    for(int i=0;i<7;i++){
         cout<<odd[i]<<" ";
     }
     return 0;
@@ -457,8 +457,8 @@ int main(){
 // apke paas 15 rupees hai aur ek chocolate ki price 1 rupee hai
 // 3 chocolate wrappers se ek chocolate free mein milegi
 // kitni chocolate kha paoge
-// 15 chocolates = 15 wrappers = 15/3 = 5 chocolates
-// 5 chocolates = 5 wrappers = 5/3 = 1 chocolate,2 wrappers
+// 15 chocolates = 15 wrappers = 15/3 = 7 chocolates
+// 7 chocolates = 7 wrappers = 7/3 = 1 chocolate,2 wrappers
 // 1 chocolate = 1 wrapper , 2 wrappers = 3/3 = 1 chocolate
 #include <iostream>
 using namespace std;
@@ -472,7 +472,7 @@ int main(){
     while(wrapper>=3){
         int newchocolate = wrapper/3;
         total_chocolate += newchocolate;
-        wrapper = wrapper%3 + newchocolate;  //15%3 = 0 + 5 = 5 // wrapper ab 5 hai and so on
+        wrapper = wrapper%3 + newchocolate;  //15%3 = 0 + 7 = 7 // wrapper ab 7 hai and so on
     cout<<total_chocolate<<endl;
     return 0;
 }
@@ -498,7 +498,7 @@ int main()
     cin >> n;
     int sum = 0;
     int i = 1;     // i is 1 because we have to start from 1 and not 0
-    while (i <= n) // 5 = 1 + 2 + 3 + 4 + 5 = 15
+    while (i <= n) // 7 = 1 + 2 + 3 + 4 + 7 = 15
     {
         sum += i;
         i++;
@@ -629,15 +629,15 @@ int main() {
 
 int main() {
     int N, M;
-    std::cin >> N >> M;
+    cin >> N >> M;
 
     int playlist[N];
     int moments[M];
     long long songDuration[N];
     // Input the play list
     for (int i = 0; i < N; i++) {
-        std::cin >> playlist[i];
-        std::cin >> songDuration[i];
+        cin >> playlist[i];
+        cin >> songDuration[i];
     }
 
     // Calculate the prefix sum of song durations
@@ -649,7 +649,7 @@ int main() {
 
     // Input the moments
     for (int i = 0; i < M; i++) {
-        std::cin >> moments[i];
+        cin >> moments[i];
     }
 
     // Find the song playing at each moment
@@ -676,7 +676,7 @@ int main() {
 
         // Calculate the song at the moment and print on a new line
         songNumber += 1;
-        std::cout << songNumber << std::endl;
+        cout << songNumber << endl;
     }
 
     return 0;
@@ -686,18 +686,18 @@ int main() {
 
 int main() {
     int N, X, Y;
-    std::cin >> N >> X >> Y;
+    cin >> N >> X >> Y;
 
     int arr[N];
     int matrix[X][Y];
 
     // Input the 1D array
     for (int i = 0; i < N; i++) {
-        std::cin >> arr[i];
+        cin >> arr[i];
     }
 
     if (N != X * Y) {
-        std::cout << "Invalid input: The dimensions do not match the array size." << std::endl;
+        cout << "Invalid input: The dimensions do not match the array size." << endl;
         return 1;
     }
 
@@ -714,12 +714,12 @@ int main() {
     // Output the 2D matrix
     for (int i = 0; i < X; i++) {
         for (int j = 0; j < Y; j++) {
-            std::cout << matrix[i][j];
+            cout << matrix[i][j];
             if (j < Y - 1) {
-                std::cout << " ";
+                cout << " ";
             }
         }
-        std::cout << std::endl;
+        cout << endl;
     }
 
     return 0;
@@ -730,14 +730,14 @@ int main() {
 
 int main() {
     int m, n;
-    std::cin >> m >> n;
+    cin >> m >> n;
 
     int mat[m][n];
 
     // Input the boolean matrix
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            std::cin >> mat[i][j];
+            cin >> mat[i][j];
         }
     }
 
@@ -767,12 +767,12 @@ int main() {
     // Output the modified matrix
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            std::cout << mat[i][j];
+            cout << mat[i][j];
             if (j < n - 1) {
-                std::cout << " ";
+                cout << " ";
             }
         }
-        std::cout << std::endl;
+        cout << endl;
     }
 
     return 0;
@@ -783,18 +783,18 @@ int main() {
 
 int main() {
     int N, X, Y;
-    std::cin >> N >> X >> Y;
+    cin >> N >> X >> Y;
 
     int arr[N];
     int matrix[X][Y];
 
     // Input the 1D array
     for (int i = 0; i < N; i++) {
-        std::cin >> arr[i];
+        cin >> arr[i];
     }
 
     if (N != X * Y) {
-        std::cout << "Invalid input: The dimensions do not match the array size." << std::endl;
+        cout << "Invalid input: The dimensions do not match the array size." << endl;
         return 1;
     }
 
@@ -811,12 +811,12 @@ int main() {
     // Output the 2D matrix
     for (int i = 0; i < X; i++) {
         for (int j = 0; j < Y; j++) {
-            std::cout << matrix[i][j];
+            cout << matrix[i][j];
             if (j < Y - 1) {
-                std::cout << " ";
+                cout << " ";
             }
         }
-        std::cout << std::endl;
+        cout << endl;
     }
 
     return 0;
@@ -1173,31 +1173,32 @@ int main() {
     return 0;
 }
 */
+/*
 #include <iostream>
 using namespace std;
 class rhombus
 {
-    int Side;
+    int Sides;
     int Dig_1;
     int Dig_2;
 
 public:
     rhombus()
     {
-        Side = 0;
+        Sides = 0;
         Dig_1 = 0;
         Dig_2 = 0;
     }
     rhombus(int s, int d1, int d2)
     {
-        Side = s;
+        Sides = s;
         Dig_1 = d1;
         Dig_2 = d2;
     }
     void display() const
     {
 
-        cout << "Side:" << Side << endl;
+        cout << "Sides:" << Sides << endl;
         cout << "Diganonal number 1 : " << Dig_1 << endl;
         cout << "Diagonal Number 2 : " << Dig_2 << endl;
         cout << endl;
@@ -1208,7 +1209,7 @@ public:
     }
     void peri()
     {
-        cout << "Perimeter of Rhombus :" << 4 * Side << endl;
+        cout << "Perimeter of Rhombus :" << 4 * Sides << endl;
     }
 };
 int main()
@@ -1219,6 +1220,7 @@ int main()
     s.peri();
     return 0;
 }
+*/
 /*
 int main() {
     rhombus defaultRhombus; // Creating a default object using the default constructor
@@ -1228,3 +1230,48 @@ int main() {
     return 0;
 }
 */
+
+//! Create a class Shape with method getArea(), inherit two classes: Square and Circle from Shape and override the getArea() method from Shape in Square and Circle to Calculate the area of Circle and Square by creating an instance of both Square and Circle in cpp
+
+#include<iostream>
+using namespace std;
+class Shape {
+public:
+    virtual double getArea() const {    // Virtual function is
+        return 0.0;  // Default implementation for the base class
+    }
+};
+
+class Square : public Shape {
+private:
+    double Sides;
+
+public:
+    Square(double s) : Sides(s) {}
+
+    double getArea() const override {
+        return Sides * Sides;  // Area of a square
+    }
+};
+
+class Circle : public Shape {
+private:
+    double Rad;
+
+public:
+    Circle(double r) : Rad(r) {}
+
+    double getArea() const override {
+        return 3.14 * Rad * Rad;  // Area of a circle
+    }
+};
+
+int main() {
+    Square square(7.0);
+    Circle circle(2.0);
+
+    cout << "Area of Square: " << square.getArea() << endl;
+    cout << "Area of Circle: " << circle.getArea() << endl;
+
+    return 0;
+}

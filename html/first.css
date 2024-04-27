@@ -1,0 +1,55 @@
+/* li ul
+{
+    display:none;
+} */
+/* li k andr ul show nhi hoga */
+/* li ol
+{
+    display:none;
+} */
+/* li:hover>ul
+{
+    display:block;
+}
+/* isse li k andr ul jo h vo show hoga on placing the cursor on the element */
+/* li:hover>ol
+{
+    display:block;
+} */ 
+/* li li
+{
+    display:none;
+}
+li:hover>*>li
+{
+    display:block;
+}
+/* isse chahe ul ho chahe ol sb hover hojayenge sth mein */
+/* input[type="radio"]:checked+label
+{
+    font-size:25px;
+    color:aqua;
+} */ */
+div
+{
+    height:100px;
+    width:100px;
+    border:2px solid blue;
+    display: inline;
+    /* inline mein height or width nhi show nhi hoti */
+}
+span
+{
+    height:200px;
+    width:200px;
+    border:2px solid red;
+    display: block;
+}
+div
+{
+    height:50px;
+    width:50px;
+    border:2px solid blue;
+    display: inline-block;
+    /* inline mein height or width nhi sue hoti */
+}

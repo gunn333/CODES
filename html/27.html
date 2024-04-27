@@ -1,0 +1,161 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Animated Stadium Image Transition</title>
+        <style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .stadium-container {
+    width: 350px; /* Adjust width as needed */
+    height: 470px; /* Adjust height as needed */
+    position: relative;
+    overflow: hidden;
+    background-color: #ccc; /* Background color of the stadium */
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+  .stadium-container:before {
+    content: '';
+    position: absolute;
+    top: -50px; /* Adjust position of semicircle */
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust height of semicircle */
+    background-color: #fff; /* Background color of the semicircle */
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+  .stadium-container img {
+    width: auto;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+</style>
+    </head>
+    <body>
+
+        <div class="stadium-container">
+            <img src="bg-1.jpg" alt="Stadium Image 1">
+        </div>
+
+    </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        // function sayHello(){
+        //     console.log("Hello");
+        // }
+        // sayHello();
+        // console.log("wait for start");
+
+        function sayhello(){
+            console.log("hello");
+        }
+            // setTimeout( sayHEllo,2000);
+            const setintervalid= setInterval(sayHello,1000);
+            // clearTimeout(setIntervalvalid);
+            console.log("wait for start 27");
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+</head>
+<body> 
+    <!-- no-blocking = asyn -->
+<h1> the xmlhttp request object</h1>
+
+    <div id="demo">
+        <h2>Let AJAX change this text</h2>
+        <button type="button" onclick="loadDoc()">Change Content</button>
+      </div>
+      
+<script>
+      function loadDoc() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+          document.getElementById("demo").innerHTML = this.responseText;
+          }
+        xhttp.open("GET", "ajax_info.txt", true);
+        xhttp.send();
+      }
+    </script>
+
+ <h1>ajax</h1>
+<button id="fetchBtn">call</button> 
+ 
+<script>
+    console.log("hello ajax");
+    let fetchBtn = document.getElementById("fetchBtn");
+    fetchBtn.addEventListener("click",buttonClickHandler);
+
+    function buttonClickHandler(){
+        console.log("hello buttonClickHandler");
+
+        const xhr= XMLHttpRequest();
+
+    }
+    xhr.open("GET","text.txt");
+</script>
+
+</body>
+</html>
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax XMLHttpRequest</title>
+</head>
+<body>
+    <button id="buttonclick">click</button>
+   
+    <script>
+        document.getElementById("buttonclick").addEventListener("click",request);
+
+        function request(){
+            console.log(" click");
+            const x =new XMLHttpRequest();
+            x.open("GET","data.txt", true); 
+            x.onreadystatechange=()=>{
+                if(x.readyState === XMLHttpRequest.DONE){
+                    if(x.status === 200){
+                        console.log(x);
+                        console.log(x.responseText);
+                    }else{
+                        console.log("something wrong");
+                    }
+                }
+            };
+            
+            x.send();
+        } 
+    </script>
+</body>
+</html> -->

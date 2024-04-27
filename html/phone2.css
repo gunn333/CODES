@@ -1,0 +1,135 @@
+
+
+/* ============ Gallery ========== */
+.work-filter{ margin-bottom:40px;}
+.work-filter li{
+	display:inline-block;
+	margin:0 20px;
+}
+.work-filter li a{
+	font-size:16px;
+	border-bottom:2px solid transparent;
+	text-shadow: none;
+   position: relative;
+   padding:5px 0;
+   display:block;
+}
+.work-filter li a:before{
+	filter: alpha(opacity=0);
+  -moz-opacity:0;
+  -khtml-opacity:0;
+	opacity:0;
+}
+.work-filter li a:before, .work-filter li a.active:before{
+  position: absolute;
+  bottom:-2px;
+  left:0;
+  overflow: hidden;
+  width: 0;
+  border-bottom: 2px solid #e25111;
+  color: #e25111;
+  content: attr(data-hover);
+  -webkit-transition: width 0.5s;
+  -moz-transition: width 0.5s;
+  transition:width 0.5s;
+  padding:10px 0;
+}
+.work-filter li a.active:before{
+	filter: alpha(opacity=100);
+  -moz-opacity:1;
+  -khtml-opacity:1;
+	opacity:1;
+	width:100%;
+}
+.work-filter li a:hover::before,
+.work-filter li.active a, .work-filter li a.active:hover::before{
+   filter: alpha(opacity=100);
+  -moz-opacity:1;
+  -khtml-opacity:1;
+  opacity:1;
+  width:100%;
+}
+.work-filter li a:hover, .work-filter li a.active{ color: #e25111;}
+#gallery .work-item {
+  position: relative;
+  padding:0 15px;
+}
+#gallery .home-gallery .work-item { padding: 15px!important;}
+.mix { display: none; }
+#gallery .work-item img{
+	-moz-transform:scale(1.1);
+	-ms-transform:scale(1.1);
+	-o-transform:scale(1.1);
+	-webkit-transform:scale(1.1);
+	transform:scale(1.1);
+}
+#gallery .work-item:hover img{
+	-moz-transform:scale(1);
+	-ms-transform:scale(1);
+	-o-transform:scale(1);
+	-ms-transform:scale(1);
+	transform:scale(1);
+}
+#gallery .gallery_content{
+	position:relative;
+	overflow:hidden;
+}
+#gallery .gallery_content h3{
+	font-size:20px;
+	color:#e25111;
+	margin-top:20px;
+}
+#gallery .gallery_content small{
+	font-size:14px;
+	color:#796e6e;
+	margin-bottom:20px;
+	display:inline-block;
+}
+.gallery_content a.btn-readmore{
+  position: relative;
+  text-shadow:none;
+  text-transform:capitalize;
+}
+.gallery_content a.btn-readmore:before{
+  color: #e25111;
+  content: attr(data-hover);
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opacity: 0;
+  top:0.5px;
+  position: absolute;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  -moz-transform: scale(1.1) translateX(10px) translateY(10px);
+  -ms-transform: scale(1.1) translateX(10px) translateY(10px);
+  -webkit-transform: scale(1.1) translateX(10px) translateY(10px);
+  transform: scale(1.1) translateX(10px) translateY(10px);
+  
+  -moz-transition: transform 0.3s ease 0s, all 0.3s ease 0s;
+  -ms-transition: transform 0.3s ease 0s, all 0.3s ease 0s;
+  -webkit-transition: transform 0.3s ease 0s, all 0.3s ease 0s;
+  transition: transform 0.3s ease 0s, all 0.3s ease 0s;
+}
+.gallery_content a.btn-readmore:hover::before, .gallery_content a.btn-readmore:focus::before{
+  filter: alpha(opacity=100);
+  -moz-opacity:1;
+  -khtml-opacity:1;
+	opacity: 1;
+	 -transform: scale(1) translateX(0px) translateY(0px);
+    -webkit-transform: scale(1) translateX(0px) translateY(0px);
+    -ms-transform: scale(1) translateX(0px) translateY(0px);
+    transform: scale(1) translateX(0px) translateY(0px);
+}
+.image{
+	overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.image img{ width:100%; }
+#gallery .work-item:hover .overlay{
+  filter: alpha(opacity=100);
+  -moz-opacity:1;
+  -khtml-opacity:1;
+  opacity: 1;
+}
+/* ============ Gallery Ends ========== */

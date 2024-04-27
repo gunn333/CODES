@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Just+Another+Hand&family=Sigmar&display=swap');
+/* p
+{
+    background-color: aqua;
+    width:600px;
+    z-index: 1;
+    height:70px;
+}
+.fontpara
+{
+    background-color: chartreuse;
+    height:80px;
+    position:relative;
+    top:-30px;
+    z-index: -1;
+} */
+p
+{
+    font-family: Bruno Ace SC;
+}

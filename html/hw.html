@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HOMEWORK</title>
+</head>
+<body>
+    <h1>Apply for Job Application</h1>
+    <form>
+        <fieldset>
+          <legend>Personal info</legend>
+          <label for="fname">First name:</label>
+          <input type="text" id="fname" name="fname" required>
+          <label for="mname">Middle name:</label>
+          <input type="text" id="mname" name="mname">
+          <label for="lname">Last name:</label>
+          <input type="text" id="lname" name="lname" required>
+          <br>
+          <br>
+          <label for="phone">Enter your phone number:</label>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+          <br>
+          <br>
+          <label for ="email"> email</label>
+          <input type="mail" id="email" name="email" required>
+          <br>
+          <br>
+          <label for="img">photo</label>
+          <input type="file" src="img_submit.gif" width="48" height="48" id="img">
+          <br>
+          <br>
+          <label for="add">address</label>
+          <input type="text" id="add" name="add">
+          <br>
+          <br>
+          <label for="city">city</label>
+          <input type="text" id="city" name="city" required>
+          <label for="state">state</label>
+          <input type="text" id="state" name="state" required>
+          <label for="pin">pin code</label>
+          <input type="number" id="pin" name="pin" required>
+          
+        </fieldset>
+        <fieldset>
+          <legend>education</legend>
+          <label for="school">school name</label>
+          <input type="text" id="school" name="school" required>
+          <br>
+          <br>
+          <label for="date">from</label>
+          <input type="date" id="date" name="date">
+          <label for="date">to</label>
+          <input type="date" id="date" name="date">
+          <br>
+          <br>
+          <label for="clg">college name</label>
+          <input type="text" id="clg" name="clg" required>
+          <br>
+          <br>
+          <label for="date">from</label>
+          <input type="date" id="date" name="date">
+          <label for="date">to</label>
+          <input type="date" id="date" name="date">
+          <br>
+        
+          <h3>subjects:</h3>
+          <ul>
+            <li>data structure and algorithms</li>
+            <li>front end</li>
+            <li>data science</li>
+
+          </ul>
+
+        </fieldset>
+        <fieldset>
+          <legend>professional info</legend>
+          <label for="cmp">company name</label>
+          <input type="text" id="cmp" name="cmp">
+          <label for="date">from</label>
+          <input type="date" id="date" name="date">
+          <label for="date">to</label>
+          <input type="date" id="date" name="date">
+          <br>
+          <br>
+          <label for="info">work info</label>
+          <input type="text" id="info" name="info">
+          <br>
+          <br>
+          <label for="resume">resume</label>
+          <input type="file" id="resume" name="resume" >
+          <br>
+          <br>
+          <button type="submit">apply</button>
+          
+
+        </fieldset>
+        
+      </form>
+</body>
+</html>

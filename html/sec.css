@@ -1,0 +1,90 @@
+/* div
+{
+    height:100px;
+    width:100px;
+    border:2px solid blue;
+    display: inline;
+    inline mein size nhi change hota
+}
+span
+{
+    height:200px;
+    width:200px;
+    border:2px solid red;
+    display: block;
+} */
+/* div
+{
+    height:50px;
+    width:50px;
+    border:2px solid blue;
+    display: inline-block;
+    inline-block mein height or width change hoti hai or block ki trh ek line mein bhi show hota hai
+}
+
+p
+{
+    border:2px solid black;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    opacity:80%;
+    font-style:oblique;
+    font-weight:1000;
+} */
+
+
+/* .three
+{
+    opacity:0%
+}
+.three:hover
+{
+    opacity:100%;
+} */
+
+/* .three
+{
+    visibility:hidden;
+} */
+/* isme element space occupy krega bs visible ni hoga */
+/* .three
+{
+    display:none;
+} */
+/* isme space b ni show hogi element ki */
+
+/* .mypara
+{
+    border:2px solid red;
+    white-space: nowrap;
+    for displaying text in oneline
+    overflow:hidden;
+    jo paragraph ka content border k bahr jara h ek line mein lane se vo hidden hogya 
+    border adjust hora hai
+    text-overflow: ellipsis;
+     isse scroll krke aage ka ni dekhega
+    
+} */
+/* .mypara:hover
+{
+    overflow:scroll;
+    isse scroll krke sara content dekh skte h para ka ek line mein inside border only
+    text-overflow:clip ;
+} */
+div
+{
+    height:150px;
+    width:700px;
+    border:2px solid red;
+}
+.two
+{
+    position:relative;
+    /* by default position static hoti hai */
+    top:20px;
+    left:50px;
+}
+.nine
+{
+    background-color: aqua;
+}

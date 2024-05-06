@@ -29,6 +29,15 @@ Decoder Destination Selector : OPR
 
 Output of Each Register is connected to 2 multiplexers
 
+It consists of four fields. Three fields contain three bits each, and one field has five bits. 
+The three bits of SELA select a source register for the A input of the ALU. 
+The three bits of SELB select a register for the B input of the ALU. The three bits of SELD select a destination register using the decoder and its seven load outputs. 
+The five bits of OPR select one of the operations in the ALU. 
+
+Causing the CPU to step through a series of micro operations  -> SEQUENCING
+
+CPU Cache Memory -> Store frequently accessed data
+
 -----------------------------------------STACK ORGANIZATION AND NOTATION-------------------------
 
 Also knowns as Single Accumulator Organization.
@@ -284,6 +293,10 @@ PIPELINE HAZARDS :
 2. Data Hazards
 3. Control Hazards
 
+
+Virtual memory -> Static RAM
+
+n instruction pipeline can be implemented by means of FIFO Buffer
 
 
 

@@ -192,3 +192,98 @@ ADD X
 AC <- AC + M[X]
 
 Benefit : No Computation Needed 
+
+### INDIRECT ADDRESSING MODE
+
+2 Memory Access Required
+
+Computation Direct Addressing mode se jada hai
+
+AC <-  AC + M[M[X]]
+
+Pointers ki facility provide krta hai and passing parameters as well.
+
+### INDEXED ADDRESSING MODE
+
+used to access or implement array efficiently.
+
+EA = Base Address + Indexed Register
+
+### BASE REGISTER ADDRESSING MODE
+
+used in program relocation.
+
+EA = Base Register Value + Displacement
+
+## DATA TRANSFER AND MANIPULATION
+
+1. Data Transfer Instructions
+2. Data Manipulation Instructions
+3. Program Control Instructions
+
+AND -> Clear Selected Bits
+OR -> Set Selected Bits
+XOR -> Complement selected Bits
+
+## PROGRAM CONTROL INSTRUCTIONS
+
+Branch   -> skip  used for Direct Addressing Mode
+
+Jump -> Same as Branch  but for Indirect Addressing Mode
+
+Skip
+
+Call
+
+Return
+
+Compare
+
+Test
+
+Subroutines and Function is same thing.
+
+compare and test instructions do not change the program sequence directly. 
+
+the test instruction performs the logical AND of two operands and updates certain status bits without retaining the result or changing the operands. 
+
+The bits of the status register are modified according to the operations performed in the ALU.
+
+## INTERRUPT
+
+cause a break in normal execution of program.
+
+1. External Interrupts  -> asynchronous
+2. Internal Interrupts / Traps  -> Synchronus
+3. Software Interrupts
+
+External interrupts come from input-output (l/0) devices, from a timing device, from a circuit monitoring the power supply, or from any other external source.
+
+Internal interrupts arise from illegal or erroneous use of an instruction or data.
+
+If the program is rerun, the internal interrupts will appear in the same place each time. External interrupts depend on external conditions that are independent of the program being executed at the time.
+
+A software interrupt is initiated by executing an instruction. A  software interrupt is a special call instruction that behaves like an interrupt rather than a subroutine call.
+
+## PIPELINING
+
+Parallel Processing:- Arrange the hardware such that more than one operation can be performed at the same time. 
+
+Already Existing Harware ko hum is trike se arrange kr rhe hain taki uski overall performance increase ho jae.
+
+### FLYNN's CLASSIFICATION
+
+1. SISD
+2. SIMD
+3. MISD
+4. MIMD
+
+PIPELINE HAZARDS :
+
+1. Structural Hazards
+2. Data Hazards
+3. Control Hazards
+
+
+
+

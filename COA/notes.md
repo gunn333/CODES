@@ -112,6 +112,7 @@ Instruction is of Variable length depending on the number of addresses it contai
 > Single Document Organization
 > > operations are performed with implied accumulator register.
 > > uses one address field
+> > CPU performs the operation using a special register called the accumulator
 
 ADD X 
 <br>
@@ -120,6 +121,7 @@ operation :   AC  <- AC + M[X]
 where M is the memory word located at address X
 
 > General Register Organization
+> > instruction has two or three address fields.
 
 ADD R1,R2,R3
 <br>
@@ -127,5 +129,66 @@ operation: R1 <- R2 + R3
 
 In Stack Organization , PUSH and POP doesn't require address field
 
+## ADDRESSING MODE
 
+Yeah humein bata ta hai ki humne Operand ko kaise treat krna hai. kaise consider krna hai. Generally we give the address in operand.
 
+Generally humare variables ya toh memory mein store ho jate hain ya fir Registers mein.
+
+Isse hum number of bits instruction mein reduce kr skte hain
+
+### IMPLIED MODE
+
+The operands are specified implicitly in the definition of the instruction.
+
+CMA - Complement Accumulator.
+
+All register reference instructions that use an accumulator are implied-mode instructions.
+
+For Zero Address and one address.
+
+CLC (used to reset Carry flag to 0).
+
+### IMMEDIATE MODE
+
+operand ki jagah direct data diya hoga. As we are using constants so no computation is required.
+
+operand is specified in the instruction itself.
+<br>
+has operand field rather than address field
+<br>
+useful for initializing registers to a constant value.
+
+Operand Range depends on the length of Address Field (operand)
+
+### REGISTER MODE
+
+Register number is written in instruction.
+
+Instruction size chota hoga
+
+Speed will be fast.
+
+### REGISTER INDIRECT MODE
+
+Operand -> Register number stored hoga
+
+Register Number mein bhi address milega of memory. Then we will go to memory and find the value.
+
+LD(R1)
+
+AC <- M[(R1)]
+
+### AUTO INCREMENT OR AUTODECREMENT ADDRESSING MODE
+
+special case of Register Indirect Addressing mode
+
+### DIRECT ADDRESSING MODE
+
+Operand -> Direct Address of memory
+
+ADD X
+
+AC <- AC + M[X]
+
+Benefit : No Computation Needed 
